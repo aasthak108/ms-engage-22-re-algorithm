@@ -30,6 +30,13 @@ public class RecommendationEngineController
     private List<String> getMovieRecommendationFromAlgorithm(String customerId)
     {
         List<String> recommendedMovies = null;
+        User user = getUserById(customerId);
+        recommendedMovies = getMovieRecommendation(user);
+        return recommendedMovies;
+    }
+
+    private List<String> getMovieRecommendation(User user)
+    {
         List<Movie> movieList = null;
         ObjectMapper mapper = new ObjectMapper();
         try
@@ -37,27 +44,20 @@ public class RecommendationEngineController
             File movieDataJSON = new ClassPathResource(
                     "/dataset/data-movie.json").getFile();
             movieList = Arrays.asList(mapper.readValue(movieDataJSON, Movie[].class));
-            User user = getUserById(customerId);
-            recommendedMovies = getMovieRecommendation(movieList, user);
         }
         catch (IOException e)
         {
             e.printStackTrace();
         }
-        return recommendedMovies;
-    }
-
-    private List<String> getMovieRecommendation(List<Movie> movieList, User user)
-    {
-        List<String> recommendedMovies = new ArrayList<>();
         List<String> featuresLiked = new ArrayList<>();
         for(Movie movie :  user.getWatchlist())
         {
             featuresLiked.addAll(movie.getProperties());
         }
+        List<String> recommendedMovies = new ArrayList<>();
         for(String feature : featuresLiked)
         {
-            for(Movie movie :  user.getWatchlist())
+            for(Movie movie :  movieList)
             {
                 if(movie.getProperties().contains(feature))
                 {
