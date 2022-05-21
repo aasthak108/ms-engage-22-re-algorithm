@@ -1,5 +1,7 @@
 package com.msengage.realgorithm.model;
 
+import java.util.List;
+
 public class User
 {
     private String userId;

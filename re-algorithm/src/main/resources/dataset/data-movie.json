@@ -1,0 +1,18 @@
+[
+  {
+    "id": "01",
+    "name": "avenger",
+    "properties":
+    [
+      "action", "sci-fi"
+    ]
+  },
+  {
+    "id": "02",
+    "name": "iron man",
+    "properties":
+    [
+      "action", "sci-fi"
+    ]
+  }
+]

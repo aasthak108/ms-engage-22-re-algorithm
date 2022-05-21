@@ -1,5 +1,7 @@
 package com.msengage.realgorithm.model;
 
+import java.util.List;
+
 public class Movie
 {
     private String id;

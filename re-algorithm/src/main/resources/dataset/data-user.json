@@ -1,0 +1,32 @@
+[
+  {
+    "userid":  "01",
+    "name": "Ritesh",
+    "watchlist" :
+    [
+      {
+        "id": "02",
+        "name": "iron man",
+        "properties":
+        [
+          "action", "sci-fi"
+        ]
+      }
+    ]
+  },
+  {
+    "userid":  "02",
+    "name": "Sitesh",
+    "watchlist" :
+    [
+      {
+        "id": "02",
+        "name": "iron man",
+        "properties":
+        [
+          "action", "sci-fi"
+        ]
+      }
+    ]
+  }
+]

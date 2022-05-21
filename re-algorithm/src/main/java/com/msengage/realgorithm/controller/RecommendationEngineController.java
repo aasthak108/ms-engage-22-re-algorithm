@@ -20,7 +20,7 @@ public class RecommendationEngineController
     private String getMovieRecommendationFromAlgorithm(String customerId)
     {
         String response = "Not Found";
-        // Call Db To Get Data
+        // Get Data
         // Run Algorithm
         return response;
     }
