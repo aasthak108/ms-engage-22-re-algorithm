@@ -1,6 +1,6 @@
 [
   {
-    "userid":  "01",
+    "userId":  "01",
     "name": "Ritesh",
     "watchlist" :
     [
@@ -15,7 +15,7 @@
     ]
   },
   {
-    "userid":  "02",
+    "userId":  "02",
     "name": "Sitesh",
     "watchlist" :
     [
