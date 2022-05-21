@@ -14,5 +14,53 @@
     [
       "action", "sci-fi"
     ]
+  },
+  {
+    "id": "03",
+    "name": "hulk",
+    "properties":
+    [
+      "action", "sci-fi"
+    ]
+  },
+  {
+    "id": "04",
+    "name": "captain america",
+    "properties":
+    [
+      "action", "sci-fi"
+    ]
+  },
+  {
+    "id": "05",
+    "name": "captain marvel",
+    "properties":
+    [
+      "action", "sci-fi"
+    ]
+  },
+  {
+    "id": "06",
+    "name": "dr strange",
+    "properties":
+    [
+      "action", "sci-fi"
+    ]
+  },
+  {
+    "id": "07",
+    "name": "de dana dan",
+    "properties":
+    [
+      "bollywood", "comedy"
+    ]
+  },
+  {
+    "id": "08",
+    "name": "hulchul",
+    "properties":
+    [
+      "comedy", "bollywood"
+    ]
   }
 ]
