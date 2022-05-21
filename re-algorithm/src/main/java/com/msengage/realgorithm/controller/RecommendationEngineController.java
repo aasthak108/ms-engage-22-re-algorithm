@@ -10,8 +10,18 @@ import org.springframework.web.bind.annotation.RestController;
 public class RecommendationEngineController
 {
     @GetMapping("/recommend-movie/{customerId}")
-    private String getMovieRecommendation(@PathVariable("customerId") int customerId){
+    private String getMovieRecommendation(@PathVariable("customerId") String customerId)
+    {
         String response = "Not Found";
+        response = getMovieRecommendationFromAlgorithm(customerId);
+        return response;
+    }
+
+    private String getMovieRecommendationFromAlgorithm(String customerId)
+    {
+        String response = "Not Found";
+        // Call Db To Get Data
+        // Run Algorithm
         return response;
     }
 }
