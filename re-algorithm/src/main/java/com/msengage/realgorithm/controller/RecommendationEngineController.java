@@ -37,18 +37,8 @@ public class RecommendationEngineController
 
     private List<String> getMovieRecommendation(User user)
     {
-        List<Movie> movieList = null;
-        ObjectMapper mapper = new ObjectMapper();
-        try
-        {
-            File movieDataJSON = new ClassPathResource(
-                    "/dataset/data-movie.json").getFile();
-            movieList = Arrays.asList(mapper.readValue(movieDataJSON, Movie[].class));
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
+        List<Movie> movieList = getMoviesFromDataSet();
+
         List<String> featuresLiked = new ArrayList<>();
         List<String> moviesWatched = new ArrayList<>();
         for(Movie movie :  user.getWatchlist())
@@ -70,6 +60,23 @@ public class RecommendationEngineController
             }
         }
         return recommendedMovies;
+    }
+
+    private List<Movie> getMoviesFromDataSet()
+    {
+        List<Movie> movieList = null;
+        ObjectMapper mapper = new ObjectMapper();
+        try
+        {
+            File movieDataJSON = new ClassPathResource(
+                    "/dataset/data-movie.json").getFile();
+            movieList = Arrays.asList(mapper.readValue(movieDataJSON, Movie[].class));
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        return movieList;
     }
 
     private User getUserById(String id)
