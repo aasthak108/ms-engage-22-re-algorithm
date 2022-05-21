@@ -50,16 +50,20 @@ public class RecommendationEngineController
             e.printStackTrace();
         }
         List<String> featuresLiked = new ArrayList<>();
+        List<String> moviesWatched = new ArrayList<>();
         for(Movie movie :  user.getWatchlist())
         {
             featuresLiked.addAll(movie.getProperties());
+            moviesWatched.add(movie.getName());
         }
         List<String> recommendedMovies = new ArrayList<>();
         for(String feature : featuresLiked)
         {
             for(Movie movie :  movieList)
             {
-                if(movie.getProperties().contains(feature))
+                if(movie.getProperties().contains(feature)
+                        && !moviesWatched.contains(movie.getName())
+                        && !recommendedMovies.contains(movie.getName()))
                 {
                     recommendedMovies.add(movie.getName());
                 }
