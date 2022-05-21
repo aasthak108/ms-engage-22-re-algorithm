@@ -19,19 +19,17 @@ import java.util.List;
 public class RecommendationEngineController
 {
     @GetMapping("/recommend-movie/{customerId}")
-    private String getMovieRecommendation(@PathVariable("customerId") String customerId)
+    private List<String> getMovieRecommendation(@PathVariable("customerId") String customerId)
     {
-        String response = "Not Found";
-        response = getMovieRecommendationFromAlgorithm(customerId);
-        return response;
+        List<String> recommendedMovies = null;
+        recommendedMovies = getMovieRecommendationFromAlgorithm(customerId);
+        return recommendedMovies;
     }
 
-    private String getMovieRecommendationFromAlgorithm(String customerId)
+    private List<String> getMovieRecommendationFromAlgorithm(String customerId)
     {
-        String response = "Not Found";
-        // Get Data
+        List<String> recommendedMovies = null;
         List<Movie> movieList = null;
-
         ObjectMapper mapper = new ObjectMapper();
         try
         {
@@ -39,15 +37,13 @@ public class RecommendationEngineController
                     "/dataset/data-movie.json").getFile();
             movieList = mapper.readValue(movieDataJSON, ArrayList.class);
             User user = getUserById(customerId);
-            List<String> recommendedMovie = getMovieRecommendation(movieList, user);
+            recommendedMovies = getMovieRecommendation(movieList, user);
         }
         catch (IOException e)
         {
             e.printStackTrace();
         }
-        System.out.println(movieList);
-        // Run Algorithm
-        return response;
+        return recommendedMovies;
     }
 
     private List<String> getMovieRecommendation(List<Movie> movieList, User user)
@@ -60,9 +56,14 @@ public class RecommendationEngineController
         }
         for(String feature : featuresLiked)
         {
-            
+            for(Movie movie :  user.getWatchlist())
+            {
+                if(movie.getProperties().contains(feature))
+                {
+                    recommendedMovies.add(movie.getName());
+                }
+            }
         }
-
         return recommendedMovies;
     }
 
