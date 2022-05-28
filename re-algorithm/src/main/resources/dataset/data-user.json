@@ -1,0 +1,40 @@
+[
+  {
+    "userId":  "01",
+    "name": "Ritesh",
+    "watchlist" :
+    [
+      {
+        "id": "02",
+        "name": "iron man",
+        "properties":
+        [
+          "action", "sci-fi"
+        ]
+      },
+      {
+        "id": "07",
+        "name": "de dana dan",
+        "properties":
+        [
+          "comedy"
+        ]
+      }
+    ]
+  },
+  {
+    "userId":  "02",
+    "name": "Sitesh",
+    "watchlist" :
+    [
+      {
+        "id": "07",
+        "name": "de dana dan",
+        "properties":
+        [
+          "comedy"
+        ]
+      }
+    ]
+  }
+]

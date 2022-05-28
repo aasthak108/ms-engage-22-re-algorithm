@@ -1,0 +1,82 @@
+[
+  {
+    "id": "01",
+    "name": "avenger",
+    "properties":
+    [
+      "action", "sci-fi"
+    ]
+  },
+  {
+    "id": "02",
+    "name": "iron man",
+    "properties":
+    [
+      "action", "sci-fi"
+    ]
+  },
+  {
+    "id": "03",
+    "name": "hulk",
+    "properties":
+    [
+      "action", "sci-fi"
+    ]
+  },
+  {
+    "id": "04",
+    "name": "captain america",
+    "properties":
+    [
+      "action", "sci-fi"
+    ]
+  },
+  {
+    "id": "05",
+    "name": "captain marvel",
+    "properties":
+    [
+      "action", "sci-fi"
+    ]
+  },
+  {
+    "id": "06",
+    "name": "dr strange",
+    "properties":
+    [
+      "action", "sci-fi"
+    ]
+  },
+  {
+    "id": "07",
+    "name": "de dana dan",
+    "properties":
+    [
+      "bollywood", "comedy"
+    ]
+  },
+  {
+    "id": "08",
+    "name": "hulchul",
+    "properties":
+    [
+      "comedy", "bollywood"
+    ]
+  },
+  {
+    "id": "09",
+    "name": "welcome",
+    "properties":
+    [
+      "comedy", "bollywood"
+    ]
+  },
+  {
+    "id": "10",
+    "name": "ant man",
+    "properties":
+    [
+      "action"
+    ]
+  }
+]
