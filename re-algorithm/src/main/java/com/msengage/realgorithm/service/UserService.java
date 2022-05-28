@@ -3,12 +3,14 @@ package com.msengage.realgorithm.service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.msengage.realgorithm.model.User;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+@Component
 public class UserService
 {
     public User getUserById(String id)

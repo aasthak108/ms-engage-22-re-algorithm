@@ -11,6 +11,14 @@
         [
           "action", "sci-fi"
         ]
+      },
+      {
+        "id": "07",
+        "name": "de dana dan",
+        "properties":
+        [
+          "comedy"
+        ]
       }
     ]
   },

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.msengage.realgorithm.model.Movie;
 import com.msengage.realgorithm.model.User;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Component
 public class MovieService
 {
     public List<String> getMovieRecommendation(User user)
@@ -28,6 +30,11 @@ public class MovieService
         {
             for(Movie movie :  movieList)
             {
+                /*
+                Core Of Algorithm:
+                Matching movie's feature with user watchlist feature to recommend
+                Only adding movie which is not in watchlist and recommendation list
+                */
                 if(movie.getProperties().contains(feature)
                         && !moviesWatched.contains(movie.getName())
                         && !recommendedMovies.contains(movie.getName()))
