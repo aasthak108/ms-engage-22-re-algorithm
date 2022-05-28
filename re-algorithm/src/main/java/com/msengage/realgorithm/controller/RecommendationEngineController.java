@@ -3,6 +3,9 @@ package com.msengage.realgorithm.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.msengage.realgorithm.model.Movie;
 import com.msengage.realgorithm.model.User;
+import com.msengage.realgorithm.service.MovieService;
+import com.msengage.realgorithm.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +22,12 @@ import java.util.List;
 @RequestMapping("/api")
 public class RecommendationEngineController
 {
+    @Autowired
+    UserService userService;
+
+    @Autowired
+    MovieService movieService;
+
     @GetMapping("/recommend-movie/{customerId}")
     private List<String> getMovieRecommendation(@PathVariable("customerId") String customerId)
     {
@@ -30,15 +39,14 @@ public class RecommendationEngineController
     private List<String> getMovieRecommendationFromAlgorithm(String customerId)
     {
         List<String> recommendedMovies = null;
-        User user = getUserById(customerId);
-        recommendedMovies = getMovieRecommendation(user);
+        User user = userService.getUserById(customerId);
+        recommendedMovies = movieService.getMovieRecommendation(user);
         return recommendedMovies;
     }
 
-    private List<String> getMovieRecommendation(User user)
+    /*private List<String> getMovieRecommendation(User user)
     {
         List<Movie> movieList = getMoviesFromDataSet();
-
         List<String> featuresLiked = new ArrayList<>();
         List<String> moviesWatched = new ArrayList<>();
         for(Movie movie :  user.getWatchlist())
@@ -60,26 +68,9 @@ public class RecommendationEngineController
             }
         }
         return recommendedMovies;
-    }
+    }*/
 
-    private List<Movie> getMoviesFromDataSet()
-    {
-        List<Movie> movieList = null;
-        ObjectMapper mapper = new ObjectMapper();
-        try
-        {
-            File movieDataJSON = new ClassPathResource(
-                    "/dataset/data-movie.json").getFile();
-            movieList = Arrays.asList(mapper.readValue(movieDataJSON, Movie[].class));
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-        return movieList;
-    }
-
-    private User getUserById(String id)
+    /*private User getUserById(String id)
     {
         User selectedUser = null;
         ObjectMapper mapper = new ObjectMapper();
@@ -102,5 +93,5 @@ public class RecommendationEngineController
             e.printStackTrace();
         }
         return selectedUser;
-    }
+    }*/
 }
