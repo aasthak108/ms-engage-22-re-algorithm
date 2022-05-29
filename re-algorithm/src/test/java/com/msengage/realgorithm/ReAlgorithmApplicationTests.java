@@ -18,7 +18,7 @@ class ReAlgorithmApplicationTests
 	{
 		String[] expectedResult =
 				new String[]{"ant man", "avenger", "captain america", "captain marvel",
-						"dr strange", "hulchul", "hulk", "welcome"};
+						"dr strange", "hulk"};
 		RecommendationEngineController testController = new RecommendationEngineController();
 		testController.setUserService(new UserService());
 		testController.setMovieService(new MovieService());
