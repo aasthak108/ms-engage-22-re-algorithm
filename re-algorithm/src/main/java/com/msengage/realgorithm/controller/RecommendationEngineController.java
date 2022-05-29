@@ -36,8 +36,11 @@ public class RecommendationEngineController
     private List<String> getMovieRecommendationById(String customerId)
     {
         List<String> recommendedMovies = null;
+        // User Service - To get user data from data set
         User user = userService.getUserById(customerId);
+        // Movie Service - To recommend movie from movie data set based on user watchlist
         recommendedMovies = movieService.getMovieRecommendation(user);
+        // Sorting Service - Helps to sort movies name alphabetically
         recommendedMovies = sortingService.sortStringArray(recommendedMovies);
         return recommendedMovies;
     }
