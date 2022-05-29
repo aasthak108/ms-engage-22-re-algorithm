@@ -5,6 +5,8 @@ Running Instruction:
 
 	This is spring boot app, just run it in any ide it will work.
 	Port is 8080
+	Endpoint: http://localhost:8080/api/recommend-movie/<User-Id>
+		Example: http://localhost:8080/api/recommend-movie/01
 
 Video Link:
 
