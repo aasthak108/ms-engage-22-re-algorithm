@@ -9,11 +9,11 @@ Running Instruction:
 Video Link:
 
 	Link 01:
-	https://youtu.be/R6lbKguQPSA
+	https://youtu.be/jRlC3n4sHSU
 
 	Link 02:
-	https://www.dropbox.com/s/tq8iolbmpwx0s5o/ms-engage-video-asstha-kumari.mp4?dl=0
+	https://www.dropbox.com/s/6tvzofo6z2034ko/ms-engage-video-asstha-kumari-latest.mp4?dl=0
 
 Architecture:
 
-	https://github.com/aasthak108/ms-engage-22-re-algorithm/blob/main/architecture-doc/Recommendation%20App%20Architecture.pdf
+	https://github.com/aasthak108/ms-engage-22-re-algorithm/blob/main/re-algorithm/reference/architecture-doc/Recommendation%20App%20Architecture.pdf
