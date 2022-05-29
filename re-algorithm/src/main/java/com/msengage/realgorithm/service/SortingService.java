@@ -9,7 +9,7 @@ import java.util.List;
 @Component
 public class SortingService
 {
-    // Sorting Algorithm
+    // Self Designed Sorting Algorithm
     public List<String> sortStringArray(List<String> inputArray)
     {
         String[] stringArray = new String[inputArray.size()];
